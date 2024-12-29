@@ -5,12 +5,10 @@ import duckdb
 conn = duckdb.connect()
 
 
+st.title('使用 SQL 搜索 Excel 文件')
 
-st.title('Use SQL to Search Excel')
-
-
-hasHeader = st.checkbox('has header', value=True)
-headerNames = '' if hasHeader else st.text_input('Header Names')
+hasHeader = st.checkbox('有表头', value=True)
+headerNames = '' if hasHeader else st.text_input('表头（英文逗号分隔，如：a,b,c）')
     
 uploaded_file = st.file_uploader('选择文件', ['xls', 'xlsx', 'xlsm', 'xlsb', 'odf', 'ods', 'odt'])
 
